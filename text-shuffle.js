@@ -5,7 +5,7 @@ const dotH = 90;
 spot.style.width = dotW + 'px';
 spot.style.height = dotH + 'px';
 // spot.style.backgroundColor = 'red'
-const shaded = [' █',' ▓',' ▒',' ░'];
+const shaded = ['█','▓','▒','░'];
 const blocks = [' &#9601; ', ' &#9602; ', ' &#9603; ', ' &#9604; ', ' &#9605; ', ' &#9606; ', ' &#9607; ', ' &#9608; ']
 const lettersAndSymbols = [' A', ' B', ' C', ' D', ' E', ' F', ' G', ' H', ' I', ' J', ' K', ' L', ' M', ' N', ' O', ' P', ' Q', ' R', ' S', ' T', ' U', ' V',  'W', ' X', ' Y', ' Z', ' 0', ' 1', ' 2', ' 3', ' 4', ' 5', ' 6', ' 7', ' 8', ' 9'];
 let textSpans;
@@ -59,7 +59,7 @@ const redraw = () => {
   textSpans.forEach((element) => {
     //element.innerHTML = pickRandFromArr(shaded);
     if (isColliding(spot, element)) {
-      element.innerHTML = pickRandFromArr(lettersAndSymbols);
+      element.innerHTML = pickRandFromArr(shaded);
     } else if (element.innerText !== element.dataset.original) {
       element.innerHTML = element.dataset.original;
 
@@ -73,7 +73,7 @@ const redraw = () => {
 let count = 0;
 const animate = () => {
   
-  if (count % 2 === 0) {
+  if (count % 1 === 0) {
     redraw();
   }
   count++
